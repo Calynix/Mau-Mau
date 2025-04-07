@@ -1,4 +1,4 @@
-//import crads interface
+import { Card } from './Card';
 
 class MauMauGame {
     deckId: string;
