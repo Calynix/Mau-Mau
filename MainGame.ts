@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {Card} from './Card';
+import { Card } from './Card';
 
 class MauMauGame {
     deckId: string | null = null;
@@ -7,11 +7,14 @@ class MauMauGame {
     players: string[] = [];
     playerHands: { [key: string]: Card[] } = {};
 
-    // Initialize the game: shuffle deck and prepare game
+    //defines base url of api
+    constructor(private API_URL: string = "https://deckofcardsapi.com/api/deck") {}
+
     async initializeGame() {
-        const shuffleResponse = await axios.get(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`);
+        const shuffleResponse = await axios.get(`${this.API_URL}/new/shuffle/?deck_count=1`);
         this.deckId = shuffleResponse.data.deck_id;
         console.log("Deck shuffled!");
+
         await this.drawCard();
     }
 
