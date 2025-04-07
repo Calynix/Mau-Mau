@@ -1,21 +1,30 @@
-import { Card } from './Card';
+import axios from 'axios';
+import {Card} from './Card';
 
 class MauMauGame {
-    deckId: string;
-    currentCard: Card;
+    deckId: string | null = null;
+    currentCard: Card | null = null;
     players: string[] = [];
-    playerHands: { [key: string]: Card[] } = {}; // cards specific to player
+    playerHands: { [key: string]: Card[] } = {};
 
     // Initialize the game: shuffle deck and prepare game
-
     async initializeGame() {
-        // Shuffle deck (API call)
-        // Draw first card
-        // use await as async
+        const shuffleResponse = await axios.get(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`);
+        this.deckId = shuffleResponse.data.deck_id;
+        console.log("Deck shuffled!");
+        await this.drawCard();
     }
 
-    async drawCard(): Promise<Card[]> {
-        // API call to draw cards
+    async drawCard(count: number = 1): Promise<Card[]> {
+        const drawResponse = await axios.get(`https://deckofcardsapi.com/api/deck/<<deck_id>>/draw/?count=2`);
+        //Map api response to card interface
+        const cards = drawResponse.data.cards.map((card: any) => ({
+            suit: card.suit,
+            value: card.value,
+            image: card.image,
+        }));
+
+        return cards;
     }
 
     // Deal cards to players
@@ -36,7 +45,7 @@ class MauMauGame {
     }
 
     playCard(player: string, card: Card) {
-       //play card
+        //play card
     }
 
 
