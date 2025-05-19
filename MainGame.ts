@@ -19,8 +19,9 @@ class MauMauGame {
     }
 
     async drawCard(count: number = 1): Promise<Card[]> {
-        const drawResponse = await axios.get(`https://deckofcardsapi.com/api/deck/<<deck_id>>/draw/?count=2`);
-        //Map api response to card interface
+        if (!this.deckId) throw new Error("Deck not initialized");
+
+        const drawResponse = await axios.get(`${this.API_URL}/${this.deckId}/draw/?count=${count}`);
         const cards = drawResponse.data.cards.map((card: any) => ({
             suit: card.suit,
             value: card.value,
@@ -31,8 +32,13 @@ class MauMauGame {
     }
 
     // Deal cards to players
-    async dealCards(numPlayers: number = 2, cardsPerPlayer: number = 5) {
-        // Draw cards and dstribute them
+       async dealCards(numPlayers: number = 2, cardsPerPlayer: number = 5) {
+        for (let i = 0; i < numPlayers; i++) {
+            const player = this.players[i];
+            const cards = await this.drawCard(cardsPerPlayer);
+            this.playerHands[player] = cards;
+        }
+        console.log("Cards dealt to players.");
     }
 
     // Start the round: draw the first card
@@ -48,11 +54,18 @@ class MauMauGame {
     }
 
     playCard(player: string, card: Card) {
-        //play card
+        if (!this.canPlayCard(card)) {
+            console.log(`${player} cannot play ${card.value} of ${card.suit}`);
+            return false;
     }
+}
 
 
     showStatus() {
-        //show Game Status
+        console.log("Current card on pile:", this.currentCard);
+        for (const player of this.players) {
+            console.log(`${player}'s hand: ${this.playerHands[player].map(card => `${card.value} of ${card.suit}`).join(', ')}`);
+        }
     }
+
 }
