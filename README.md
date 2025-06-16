@@ -20,5 +20,5 @@
 ## Was heute gemacht wird:
 - Aufrufbar auf localhost
 - Besprechung Deployment auf AWS
-
+- Brainstorming Kartendesigne
 
