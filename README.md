@@ -22,3 +22,9 @@
 - Besprechung Deployment auf AWS
 - Brainstorming Kartendesigne
 
+
+## 23.06.25
+
+## Was heute gemacht wird:
+- Vite App
+- AWS deployment
