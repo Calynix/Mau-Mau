@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { Card } from './Card';
-import MauMauGame from './MauMauGame';
+import { Card } from './MMG-Backend/Card';
+import MauMauGame from './MMG-Backend/MainGame';
 
 const game = new MauMauGame();
 

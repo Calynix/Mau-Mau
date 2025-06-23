@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Card } from './MMG-Backend/Card';
+import { Card } from './Card';
 
 class MauMauGame {
     deckId: string | null = null;
