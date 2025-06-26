@@ -1,7 +1,0 @@
-- Kommentare über was eine Methode macht. Sehr kurz gefasst.
-- Variabeln werden im CamelCase geschriben und sind *Klein*.
-- Formattierung beachten:
-    - Einrückung korrekt
-    - Zeilenumbrüche korrekt
-    - Falls nötig, lieber eine Zeile spalten und in zwei teilen als zu lang machen.
-    - Bei Einrückung die geschwungenen Klammern {} beachten.

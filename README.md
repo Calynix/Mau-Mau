@@ -28,3 +28,8 @@
 ## Was heute gemacht wird:
 - Vite App
 - AWS deployment
+
+### 26.06.25
+- Komplettes pull down of previous code
+- New build of vite app
+- Code wurde ursprünglich nicht sauber genug aufgesetzt, weshalb eine neue sauberere aufsetzung von anfang an eifacher war als den alten Code zu korrigieren.
