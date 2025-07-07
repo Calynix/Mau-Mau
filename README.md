@@ -33,3 +33,10 @@
 - Komplettes pull down of previous code
 - New build of vite app
 - Code wurde ursprünglich nicht sauber genug aufgesetzt, weshalb eine neue sauberere aufsetzung von anfang an eifacher war als den alten Code zu korrigieren.
+
+
+# AWS Upload
+Ich habe mehrmals versucht die Webseite auf AWS zu pushen.
+![image](https://github.com/user-attachments/assets/3a6fb06e-3e82-4e04-8d80-bc40fb9dd0e5)
+Hier noch ein Foto, wie meine Ansicht in AWL aussieht.
+![Uploading image.png…]()
