@@ -39,4 +39,7 @@
 Ich habe mehrmals versucht die Webseite auf AWS zu pushen.
 ![image](https://github.com/user-attachments/assets/3a6fb06e-3e82-4e04-8d80-bc40fb9dd0e5)
 Hier noch ein Foto, wie meine Ansicht in AWL aussieht.
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/462be367-cdc5-4141-854b-2e9d20fea7dd)
+
+Trotz meinen Bemühungen, habe ich es nicht geschafft die Webseite mit AWS laufen zu lassen.
+
